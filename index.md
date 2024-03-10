@@ -1,33 +1,33 @@
 ---
 layout: cv
-title: KawhiCurry's Resume
+title: Xmelon's Resume
 email:
-  url: mailto:1145315261@qq.com
-  text: 1145315261@qq.com
+  url: mailto:12185744@qq.com
+  text: 12185744@qq.com
 homepage:
-  url: https://kawhicurry.github.io
-  text: kawhicurry.github.io
+  url: https://xmelon.cafe
+  text: xmelon.cafe
 ---
 
-# 于思远
+# 林佳敏
 
 {% include cv-contact.html %}
 
 ## 教育经历
 
-### 南京邮电大学 本科 自动化系 `2020-至今`
+### 广州城市理工学院(原华南理工大学广州学院) 本科 软件工程 `2021-至今`
 
 ## 工作经验
 
-[**腾讯音乐集团 - 基础平台部 - 业务运维**](https://join.tencentmusic.com/campus/post-details/?id=12187&refer_code) `2023/06-至今`
+[**广州城市理工学院 - 机器人野狼队 - 软件组组长**](https://gcubot.cn) `2022/09-至今`
 
 个人以业务运维的身份参与日常运维工作，同时参与开发和建设集团接入层相关基础设施。
 
-[**南京邮电大学 - 青柚工作室 - linux运维**](https://qingyou.njupt.edu.cn) `2021/08-至今`
+[**广州城市理工学院 - ACM集训队 - 比赛队员**](https://qingyou.njupt.edu.cn) `2022/04-至今`
 
 青柚工作室团队主营校内小程序开发业务，代表业务有南邮小程序、邮你来办、南邮镜像站等。个人作为运维负责人，主导了团队运维体系从零到一的建设。
 
-[**南京邮电大学 - Apollo机器人俱乐部 - 2D仿真组组长**](https://github.com/Apollo2d/) `2021-2022`
+[**广州城市理工学院 - 语音工作室 - 运维管理员**](https://github.com/Apollo2d/) `2021-2022`
 
 个人作为该科研竞赛项目组长，参与了相关Cpp项目的开发，并贡献了HFO Trainer等开源项目。
 
