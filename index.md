@@ -1,177 +1,60 @@
 ---
 layout: cv
-title: Wode "Nimo" Ni
+title: KawhiCurry's Resume
 email:
-  url: mailto:nimo@cmu.edu
-  text: nimo@cmu.edu
+  url: mailto:1145315261@qq.com
+  text: 1145315261@qq.com
 homepage:
-  url: http://cs.cmu.edu/~woden
-  text: cs.cmu.edu/~woden
+  url: https://kawhicurry.github.io
+  text: kawhicurry.github.io
 ---
 
-# Wode **Ni**
-
-<!--
-include contact information from the front matter
-Supported arguments:
-    - homepage: url, text
-    - phone
-    - email
--->
+# 于思远
 
 {% include cv-contact.html %}
 
-## Education
+## 教育经历
 
-### **Carnegie Mellon University** `2018.9 -`
+### 南京邮电大学 本科 自动化系 `2020-至今`
 
-```
-Pittsburgh, PA
-```
+## 工作经验
 
-- Ph.D. in Software Engineering
-- MS in 2021
-- Co-advised by [Ken Koedinger](http://pact.cs.cmu.edu/koedinger.html) and [Josh Sunshine](http://www.cs.cmu.edu/~jssunshi/)
+[**腾讯音乐集团 - 基础平台部 - 业务运维**](https://join.tencentmusic.com/campus/post-details/?id=12187&refer_code) `2023/06-至今`
 
-### **Columbia University** `2016.9 - 2018.5`
+个人以业务运维的身份参与日常运维工作，同时参与开发和建设集团接入层相关基础设施。
 
-```
-New York, NY
-```
+[**南京邮电大学 - 青柚工作室 - linux运维**](https://qingyou.njupt.edu.cn) `2021/08-至今`
 
-- B.S. in Computer Science, _Magna Cum Laude_
-- Vision, Graphics track
+青柚工作室团队主营校内小程序开发业务，代表业务有南邮小程序、邮你来办、南邮镜像站等。个人作为运维负责人，主导了团队运维体系从零到一的建设。
 
-### **Dickinson College** `2013.9 - 2016.5`
+[**南京邮电大学 - Apollo机器人俱乐部 - 2D仿真组组长**](https://github.com/Apollo2d/) `2021-2022`
 
-```
-Carlisle, PA
-```
+个人作为该科研竞赛项目组长，参与了相关Cpp项目的开发，并贡献了HFO Trainer等开源项目。
 
-- B.S. in Computer Science, _Summa Cum Laude_
-- Computer Science Departmental Honors
+## 项目经历
 
-## Publications
+### **统一接入层系统**  *腾讯音乐集团* `2023/06-至今`
 
-### [**Generating Domain-Specific Programs for Diagram Authoring with Large Language Models**](https://wodenimoni.com/assets/splash-23-llm-diagrams.pdf)
+集团业务接入层大量依赖手工配置，链路信息分散在多个系统，查询与变更需耗费大量精力与时间。为解决接入层相关链路的信息不透明与变更困难问题，我们建设了一套统一接入层系统：
 
-Rijul Jain, **Wode Ni**, and Joshua Sunshine.<br>
-_SPLASH 2023: Companion Proceedings of the 2023 ACM SIGPLAN International Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH'23 EA)._<br>
-[[PDF](https://wodenimoni.com/assets/splash-23-llm-diagrams.pdf)]
+- 与团队协商并制定各子系统配置的规范与标准后，对各系统现网存量配置进行采集入库、规范化和再下发，进而推进接入层相关组件的标准化。
+- 基于django+vue进行开发，对接集团上下游中间件，打通从域名到真实服务的全链路信息。将链路信息的查询、变更、下发收敛到一个系统。进而提升接入层配置的查询与变更效率。
+- 对齐内部运维平台内部的权限、成本等信息，将统一接入层系统的配置变更接入平台审批流系统，进而为保障了信息查询的高效与配置变更的灵活与规范。
 
-### [**reCode: A Lightweight Find-and-Replace Interaction in the IDE for Transforming Code by Example**]({{ page.homepage.url }}/assets/uist-21-recode.pdf)
-**Wode Ni**, Joshua Sunshine, Vu Le, Sumit Gulwani, and Titus Barik.<br> 
-_In Proceedings of the 34th ACM Symposium on User Interface Software and Technology (UIST'21)._ <br>
-[[PDF]({{ page.homepage.url }}/assets/uist-21-recode.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/uist-21-recode.txt)]
-[[video preview](https://youtu.be/fMdHK9UrgQ4)]
-[[talk](https://youtu.be/_GQ8E7EMMws)]
+### **基础设施维护与运维体系建设** *青柚工作室* `2022/01-2023/05`
 
+接手运维工作后，发现原有运维架构存在权限管理粗放、业务部署混乱、应用配置变更困难、服务可靠性差等问题。为提高业务与基础设施的可用性与稳定性，我采取了以下措施：
 
-### [**Penrose: From Mathematical Notation to Beautiful Diagrams**](http://penrose.ink/media/Penrose_SIGGRAPH2020.pdf)
-Katherine Ye, **Wode Ni**, Max Krieger, Dor Ma'ayan, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br> 
-_ACM Transactions on Graphics (SIGGRAPH'20)._<br>
-[[PDF](http://penrose.ink/media/Penrose_SIGGRAPH2020.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/siggraph20-penrose.txt)]
-[[www](http://penrose.ink/siggraph20.html)]
-[[repo](https://github.com/penrose/penrose)]
+- 回收所有服务器与数据库权限，并依据最小权限原则进行权限再分配，为服务器集群开发和建设了基于CA的ssh登录认证体系，结束了权限管理粗放的问题。
+- 建设团队私有kubernetes集群，依据Google Borg论文对各类存量服务整理、分类和改造并逐步迁移至集群中，从而保证基础设施的标准统一与部署规范。
+- 以gitlab-ci为中心，结合ansible、helm等工具推进gitops体系建设，允许以声明式配置对nginx、sshd、k8s等基础设施进行变更，从而保证了业务迭代的敏捷与配置变更的规范。
+- 围绕kube-prometheus-stack与grafana-stack，建设包含监控、日志、链路追踪、性能分析的全链路可观测平台，为业务和基础设施提供完整的可观测能力和基本的告警能力，在为业务开发提供便利便利的同时，将故障发现时间由数小时缩减到五分钟内，进而大幅提升服务可靠性。
+- 通过主动发现业务异常和及时响应报警，解决过多起线上事故。并在事后通过复盘、整理、归纳并优化相关问题，最终将整个团队的故障频率由每月10次以上降低到2次以下。
 
-### [**How Domain Experts Create Conceptual Diagrams and Implications for Tool Design**]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.pdf)
+## 相关技能
 
-Dor Ma'ayan\*, **Wode Ni\***, Katherine Ye, Chinmay Kulkarni, and Joshua Sunshine.<br>
-<i class="fas fa-award"></i> <strong>Best Paper Honourable Mention</strong><br>
-_In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (CHI'20)._<br>
-[[PDF]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.pdf)]
-[[BibTeX]({{ page.homepage.url }}/assets/chi-20-natural-diagramming.txt)]
-
-
-### [**Defining Visual Narratives for Mathematics Declaratively**](http://2019.plateau-workshop.org/assets/papers-2019/9.pdf)
-
-Max Krieger, **Wode Ni**, and Joshua Sunshine.<br>
-_Evaluation and Usability of Programming Languages and Tools (PLATEAU 2019), co-located with UIST._<br>
-[[PDF](http://2019.plateau-workshop.org/assets/papers-2019/9.pdf)]
-[[slides]({{ page.homepage.url }}/assets/plateau-19-presentation.pdf)]
-
-### [**Designing Declarative Language Tutorials: a Guided and Individualized Approach**](http://2019.plateau-workshop.org/assets/papers-2019/2.pdf)
-
-Anael Kuperwajs Cohen, **Wode Ni**, and Joshua Sunshine.<br>
-_Evaluation and Usability of Programming Languages and Tools (PLATEAU 2019), co-located with UIST._<br>
-[[PDF](http://2019.plateau-workshop.org/assets/papers-2019/2.pdf)]
-[[slides]({{ page.homepage.url }}/assets/plateau-19-presentation.pdf)]
-
-### [**Substance and Style: domain-specific languages for mathematical diagrams**](https://2017.splashcon.org/event/dsldi-2017-substance-and-style-domain-specific-languages-for-mathematical-diagrams)
-
-**Wode Ni\***, Katherine Ye\*, Joshua Sunshine, Jonathan Aldrich, and Keenan Crane.<br> _Domain-Specific Language Design and Implementation (DSLDI 2017), co-located with SPLASH._ <br>
-[[PDF]({{ page.homepage.url }}/assets/dsldi.pdf)]
-[[slides]({{ page.homepage.url }}/assets/dsldi-presentation.pdf)]
-[[www](http://penrose.ink)]
-[[repo](https://github.com/penrose/penrose)]
-
-### [**Whiteboard Scanning Using Super-Resolution**](http://scholar.dickinson.edu/student_honors/221/)
-
-**Wode Ni**.<br> _Dickinson College Honors Theses. Paper 221._<br>
-[[PDF]({{ page.homepage.url }}/assets/superres.pdf)]
-
-## Experience
-### **Apple** `2022.5 - 2022.9`
-
-_Research Intern - Machine Intelligence_<br>
-
-At [Apple AI/ML](https://machinelearning.apple.com/), I worked on prototypes and features to improve the developer experience. 
-
-### **Microsoft Research** `2020.5 - 2020.8`
-
-_Research Intern_<br>
-Worked with the [PROSE](https://www.microsoft.com/en-us/research/group/prose/) team (mentored by [Titus Barik](https://www.barik.net/)) on improving developer productivity in Visual Studio Code. I interviewed developers to elicit their needs for code transformation tools in editors. Inspired by the empirical data and relevant work in program synthesis, I designed **reCode**, an interaction model for rapidly performing complex code transformation using the familiar find-and-replace experience.
-
-### **Carnegie Mellon University, Research Experiences for Undergraduate** `2017.5 - 2017.8`
-
-_Research Assistant_<br>
-**Penrose** is a system that automatically visualizes mathematics using two domain-specific languages: **Substance** and **Style**. Co-advised by [Jonathan Aldrich](https://www.cs.cmu.edu/~./aldrich/), [Keenan Crane](https://www.cs.cmu.edu/~kmcrane/), [Joshua Sunshine](http://www.cs.cmu.edu/~jssunshi/), and [Katherine Ye](https://www.cs.cmu.edu/~kqy/), I designed and implemented the Style language, and extended the Substance language to support functions and logically quantified statements.
-
-### **Columbia University, Computer Graphics and User Interfaces Lab** `2017.1 - 2017.5`
-
-_Research Assistant_<br>
-Worked with prof. Steven Feiner, on **Cyber Affordance Visualization in Augumented Reality** project. Developed a Microsoft Hololens application that visualizes the Columbia campus in AR environment.
-
-## Teaching
-
-Teaching Assistant, **Foundations of Software Engineering (17-313)** `CMU, 2022` <br>
-Teaching Assistant, **Crafting Software (17-450/17-950)** `CMU, 2022` <br>
-Teaching Assistant, **Programming Languages and Translators (COMS 4115)** `Columbia, 2017 - 2018` <br>
-Teaching Assistant, **Introduction to Java II (COMP 132)** `Dickinson, 2016` <br>
-Peer Tutor, **Data Structures and Problem Solving (COMP 232)** `Dickinson, 2016` <br>
-Computer Lab Consultant `Dickinson, 2014 - 2016` <br>
-
-## Mentoring
-
-[Rijul Jain](https://rijuljain.com/) (Williams College) `CMU, 2023 - Now` <br>
-[Yiliang "Leo" Liang](https://www.linkedin.com/in/yiliang-liang-a3631a138/) (University of Michigan) `CMU, 2022 - 2023` <br>
-[Hwei-Shin Harriman](https://hsharriman.github.io/) (Olin College of Engineering, independent research) `CMU, 2021 - 2022` <br>
-[Helena Yang](https://heleaf.me/) (CMU, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2021` <br>
-[Max Krieger](https://a9.io/) (CMU, independent research & [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2018 - 2021` <br>
-[Courtney Miller](https://courtney-e-miller.github.io/) (New College of Florida, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2019` <br>
-[Anael Kuperwajs Cohen](https://anaelkuperwajs.github.io/) (Macalester College, [REUSE](https://www.cmu.edu/scs/s3d/reuse/)) `CMU, 2019` <br>
-
-## Honors & Awards
-
-CHI'20 Best Paper Honourable Mention Award `CMU, 2020` <br>
-Phi Beta Kappa `Dickinson, 2018` <br>
-Excellence in Computer Science Award `Columbia, 2018` <br>
-Travel Award PL Mentoring Workshop (PLMW) `SPLASH, 2018` <br>
-Tau Beta Pi, Engineering Honor Society `Columbia, 2017` <br>
-Computer Science Departmental Honors `Dickinson, 2016` <br>
-Pi Mu Epsilon, Mathematics Honor Society `Dickinson, 2016` <br>
-Upsilon Pi Epsilon, Computer Science Honor Society `Dickinson, 2016` <br>
-Alpha Lambda Delta, First year Honor Society `Dickinson, 2013`<br>
-John Montgomery Scholarship `Dickinson, 2013` <br>
-
-## Service
-
-Sub-reviewer `OOPSLA'21, VL/HCC'21` <br>
-Reviewer `CHI'21, CHI'22, SIGGRAPH'22, UIST'23, CHI'24` <br>
-Research Experiences for Undergraduates in Software Engineering Admission Committee `CMU, 2019 - 2023` <br>
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
+- 编程语言：能熟练编写bash与python脚本，可以使用Go与C进行中间件和底层组件开发，可以使用vue进行前端开发。
+- 操作系统：使用Arch Linux作为日常使用的操作系统，拥有个人维护的[AUR包](https://aur.archlinux.org/packages?O=0&SeB=m&K=kawhicurry&outdated=&SB=m&SO=d&PP=50&submit=Go)。了解systemd，ebpf。
+- 性能分析：了解性能分析的基本方法与工具，能熟练使用sysstat、ebpf工具对系统性能问题进行分析。
+- 语言能力：良好的中英语阅读能力与文档编写能力。
+- 其他能力：了解SRE的基本观念，有标准化意识，有主动发现与解决问题的能力
